@@ -43,7 +43,7 @@ const App = () => (
             } />
             <Route path="/activity-log" element={
               <ProtectedRoute>
-                <Dashboard />
+                <ActivityLog />
               </ProtectedRoute>
             } />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
