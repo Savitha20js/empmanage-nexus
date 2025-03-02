@@ -66,7 +66,7 @@ const ActivityLog: React.FC = () => {
       <div className="p-6 space-y-6">
         <Header 
           title="Login Activity Log" 
-          description="Monitor and analyze system access activities"
+          subtitle="Monitor and analyze system access activities"
           actions={
             <Button variant="outline" size="sm">
               <Download className="mr-2 h-4 w-4" />
