@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import MainLayout from '@/components/layout/MainLayout';
 import Header from '@/components/ui/Header';
@@ -7,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useAuth } from '@/context/AuthContext';
-import { Download, FileSpreadsheet, Filter, Plus, DollarSign, PieChart } from 'lucide-react';
+import { Download, FileSpreadsheet, Filter, Plus, DollarSign, PieChart, Clock } from 'lucide-react';
 
 // Mock payroll data
 const payrollHistory = [

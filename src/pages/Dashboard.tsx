@@ -10,8 +10,25 @@ import { Button } from '@/components/ui/button';
 import { useAuth } from '@/context/AuthContext';
 import { Users, DollarSign, Calendar, Clock, Bell, BarChart } from 'lucide-react';
 
+// Type definition for employee metrics
+type EmployeeMetric = {
+  id: number;
+  name: string;
+  department: string;
+  attendance: string;
+  productivity: string;
+  lastActive: string;
+};
+
+type Announcement = {
+  id: number;
+  title: string;
+  content: string;
+  date: string;
+};
+
 // Mock data for dashboard
-const employeeMetrics = [
+const employeeMetrics: EmployeeMetric[] = [
   { id: 1, name: 'John Smith', department: 'Engineering', attendance: '92%', productivity: '87%', lastActive: '2 hours ago' },
   { id: 2, name: 'Sarah Johnson', department: 'HR', attendance: '96%', productivity: '91%', lastActive: '40 minutes ago' },
   { id: 3, name: 'Michael Brown', department: 'Marketing', attendance: '89%', productivity: '84%', lastActive: '1 day ago' },
@@ -19,7 +36,7 @@ const employeeMetrics = [
   { id: 5, name: 'David Wilson', department: 'Finance', attendance: '97%', productivity: '90%', lastActive: '5 hours ago' },
 ];
 
-const announcements = [
+const announcements: Announcement[] = [
   { id: 1, title: 'Company Meeting', content: 'There will be a company-wide meeting on Friday at 3 PM.', date: '2023-05-20' },
   { id: 2, title: 'Holiday Notice', content: 'The office will be closed on Monday for the national holiday.', date: '2023-05-18' },
   { id: 3, title: 'New Health Benefits', content: 'New health benefits will be available starting next month.', date: '2023-05-15' },
@@ -30,17 +47,17 @@ const Dashboard = () => {
   const isAdmin = user?.role === 'admin';
 
   const metricsColumns = [
-    { key: 'name', header: 'Employee Name' },
-    { key: 'department', header: 'Department' },
-    { key: 'attendance', header: 'Attendance' },
-    { key: 'productivity', header: 'Productivity' },
-    { key: 'lastActive', header: 'Last Active' },
+    { key: 'name' as keyof EmployeeMetric, header: 'Employee Name' },
+    { key: 'department' as keyof EmployeeMetric, header: 'Department' },
+    { key: 'attendance' as keyof EmployeeMetric, header: 'Attendance' },
+    { key: 'productivity' as keyof EmployeeMetric, header: 'Productivity' },
+    { key: 'lastActive' as keyof EmployeeMetric, header: 'Last Active' },
   ];
 
   const announcementColumns = [
-    { key: 'title', header: 'Title' },
-    { key: 'content', header: 'Content' },
-    { key: 'date', header: 'Date' },
+    { key: 'title' as keyof Announcement, header: 'Title' },
+    { key: 'content' as keyof Announcement, header: 'Content' },
+    { key: 'date' as keyof Announcement, header: 'Date' },
   ];
 
   return (

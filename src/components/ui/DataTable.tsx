@@ -85,7 +85,7 @@ function DataTable<T extends { id: string | number }>({
                       ? column.render(item)
                       : column.render 
                         ? column.render(item) 
-                        : String(item[column.key])}
+                        : String(column.key !== 'actions' ? item[column.key as keyof T] : '')}
                   </td>
                 ))}
               </tr>
